@@ -43,38 +43,35 @@
 - 以下に示すパスは単一プロジェクトを想定しています - plan.mdの構造に基づいて調整してください
 
 ## フェーズ3.1: セットアップ
-- [ ] T001 実装計画に従ってプロジェクト構造を作成
-- [ ] T002 [言語]プロジェクトを[フレームワーク]依存関係で初期化
-- [ ] T003 [P] リンティングおよびフォーマットツールを設定
+- [ ] T001 実装計画に従ってプロジェクト構造を作成 (例: Next.js, Astro)
+- [ ] T002 [フレームワーク]プロジェクトを初期化し、依存関係 (例: react, tailwindcss) をインストール
+- [ ] T003 [P] リンティング (ESLint)、フォーマット (Prettier)、および視覚的リグレッションテストツール (Playwright) を設定
 
 ## フェーズ3.2: テストファースト (TDD) ⚠️ 3.3の前に完了必須
 **重要: これらのテストは、いかなる実装の前に書かれ、失敗しなければなりません**
-- [ ] T004 [P] tests/contract/test_users_post.pyのPOST /api/usersの契約テスト
-- [ ] T005 [P] tests/contract/test_users_get.pyのGET /api/users/{id}の契約テスト
-- [ ] T006 [P] tests/integration/test_registration.pyのユーザー登録の統合テスト
-- [ ] T007 [P] tests/integration/test_auth.pyの認証フローの統合テスト
+- [ ] T004 [P] tests/e2e/navigation.spec.ts の主要ページ間のナビゲーションのE2Eテスト
+- [ ] T005 [P] tests/e2e/form-submission.spec.ts のフォーム送信のE2Eテスト
+- [ ] T006 [P] tests/visual/critical-components.spec.ts の重要コンポーネント (ヘッダー、フッター) の視覚的リグレッションテスト
 
 ## フェーズ3.3: コア実装 (テストが失敗した後のみ)
-- [ ] T008 [P] src/models/user.pyのユーザーモデル
-- [ ] T009 [P] src/services/user_service.pyのUserService CRUD
-- [ ] T010 [P] src/cli/user_commands.pyのCLI --create-user
-- [ ] T011 POST /api/usersエンドポイント
-- [ ] T012 GET /api/users/{id}エンドポイント
-- [ ] T013 入力検証
-- [ ] T014 エラー処理とロギング
+- [ ] T007 [P] src/components/Header.tsx のヘッダーコンポーネント
+- [ ] T008 [P] src/components/Footer.tsx のフッターコンポーネント
+- [ ] T009 [P] src/components/Card.tsx の再利用可能なカードコンポーネント
+- [ ] T010 [P] src/app/page.tsx のホームページの実装
+- [ ] T011 [P] src/app/about/page.tsx の「バージョン情報」ページの実装
+- [ ] T012 グローバルなCSSスタイルとテーマを設定 (例: src/app/globals.css)
 
 ## フェーズ3.4: 統合
-- [ ] T015 UserServiceをDBに接続
-- [ ] T016 認証ミドルウェア
-- [ ] T017 リクエスト/レスポンスロギング
-- [ ] T018 CORSとセキュリティヘッダー
+- [ ] T013 [P] 外部APIからデータをフェッチするためのサービス層を実装 (例: src/services/api.ts)
+- [ ] T014 APIサービスをコンポーネントに接続
+- [ ] T015 アナリティクス (Google Analyticsなど) を統合
 
 ## フェーズ3.5: 磨き上げ
-- [ ] T019 [P] tests/unit/test_validation.pyの検証の単体テスト
-- [ ] T020 パフォーマンステスト (<200ms)
-- [ ] T021 [P] docs/api.mdを更新
-- [ ] T022 重複を削除
-- [ ] T023 manual-testing.mdを実行
+- [ ] T016 [P] tests/unit/utils.spec.ts のユーティリティ関数の単体テスト
+- [ ] T017 Lighthouseスコアに基づきパフォーマンスを最適化 (目標: >90)
+- [ ] T018 [P] README.md に開発とビルドの手順を記述
+- [ ] T019 アクセシビリティ (WCAG) の問題をチェックし修正
+- [ ] T020 manual-testing.md に従って手動テストを実行
 
 ## 依存関係
 - 実装 (T008-T014) の前にテスト (T004-T007)
