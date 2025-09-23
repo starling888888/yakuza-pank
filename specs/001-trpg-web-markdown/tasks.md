@@ -4,10 +4,10 @@
 **前提条件**: plan.md, research.md, data-model.md
 
 ## フェーズ3.1: セットアップ
-- [ ] T001 `npm create astro@latest` を使用して、Astroプロジェクトを初期化する（ReactとTailwind CSSのインテグレーションを含む）。
-- [ ] T002 `npm install --save-dev @biomejs/biome` を実行し、Biomeをプロジェクトに導入する。
-- [ ] T003 `biome.json` をプロジェクトルートに作成し、リンターとフォーマッターを設定する。
-- [ ] T004 `package.json` の `scripts` に `lint`, `format`, `check` コマンドを追加する。
+- [X] T001 `npm create astro@latest` を使用して、Astroプロジェクトを初期化する（ReactとTailwind CSSのインテグレーションを含む）。
+- [X] T002 `npm install --save-dev @biomejs/biome` を実行し、Biomeをプロジェクトに導入する。
+- [X] T003 `biome.json` をプロジェクトルートに作成し、リンターとフォーマッターを設定する。
+- [X] T004 `package.json` の `scripts` に `lint`, `format`, `check` コマンドを追加する。
 
 ## フェーズ3.2: テストファースト (TDD)
 **重要**: これらのテストは、いかなる実装の前に書かれ、失敗しなければなりません。
