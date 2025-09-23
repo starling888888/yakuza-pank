@@ -5,7 +5,7 @@
 ## 1. 前提条件
 
 - [Node.js](https://nodejs.org/) (v18以降)
-- [pnpm](https://pnpm.io/installation)
+- npm (Node.jsにバンドルされています)
 
 ## 2. セットアップ手順
 
@@ -19,10 +19,10 @@ cd yakuza-pank
 
 ### ステップ2: 依存関係のインストール
 
-プロジェクトルートで以下のコマンドを実行し、pnpmを使用して依存関係をインストールする。
+プロジェクトルートで以下のコマンドを実行し、npmを使用して依存関係をインストールする。
 
 ```bash
-pnpm install
+npm install
 ```
 
 ### ステップ3: 開発サーバーの起動
@@ -30,7 +30,7 @@ pnpm install
 以下のコマンドを実行して、Astroの開発サーバーを起動する。
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
 起動に成功すると、ターミナルにローカルサーバーのアドレス（例: `http://localhost:4321`）が表示される。
@@ -39,12 +39,12 @@ pnpm dev
 
 ## 3. 主要なスクリプト
 
-- `pnpm dev`: 開発サーバーを起動する。
-- `pnpm build`: 本番用の静的ファイルを `dist/` ディレクトリにビルドする。
-- `pnpm preview`: ビルドされた本番用ファイルをローカルでプレビューする。
-- `pnpm format`: Biomeでプロジェクト全体のフォーマットを実行する。
-- `pnpm lint`: Biomeでプロジェクト全体のLintチェックを実行する。
-- `pnpm check`: BiomeでフォーマットとLintのチェックを同時に実行する。
+- `npm run dev`: 開発サーバーを起動する。
+- `npm run build`: 本番用の静的ファイルを `dist/` ディレクトリにビルドする。
+- `npm run preview`: ビルドされた本番用ファイルをローカルでプレビューする。
+- `npm run format`: Biomeでプロジェクト全体のフォーマットを実行する。
+- `npm run lint`: Biomeでプロジェクト全体のLintチェックを実行する。
+- `npm run check`: BiomeでフォーマットとLintのチェックを同時に実行する。
 
 ## 4. ツールと拡張機能
 

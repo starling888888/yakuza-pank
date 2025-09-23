@@ -1,36 +1,53 @@
-# フェーズ2: 実装タスク
+# タスク: TRPGルールブック公開サイト
 
-このドキュメントは、機能仕様で定義された要件を実装するための具体的な開発タスクを定義する。
+**入力**: `/specs/001-trpg-web-markdown/`からの設計ドキュメント
+**前提条件**: plan.md, research.md, data-model.md
 
-## タスクリスト
+## フェーズ3.1: セットアップ
+- [ ] T001 `npm create astro@latest` を使用して、Astroプロジェクトを初期化する（ReactとTailwind CSSのインテグレーションを含む）。
+- [ ] T002 `npm install --save-dev @biomejs/biome` を実行し、Biomeをプロジェクトに導入する。
+- [ ] T003 `biome.json` をプロジェクトルートに作成し、リンターとフォーマッターを設定する。
+- [ ] T004 `package.json` の `scripts` に `lint`, `format`, `check` コマンドを追加する。
 
-| ID | タスク内容 | 担当者 | 見積もり | ステータス |
-|:---|:---|:---:|:---:|:---:|
-| **T01** | **プロジェクト初期設定** | | | 未着手 |
-| T01-01 | `pnpm create astro@latest` でAstroプロジェクトを初期化する（React, Tailwindサポート付き） | | | 未着手 |
-| T01-02 | Biomeを導入し、`biome.json`を設定する | | | 未着手 |
-| T01-03 | `pnpm`スクリプト（`lint`, `format`, `check`）を設定する | | | 未着手 |
-| T01-04 | GitHubリポジトリにプロジェクトをプッシュする | | | 未着手 |
-| **T02** | **基本レイアウト実装** | | | 未着手 |
-| T02-01 | `src/layouts/MainLayout.astro` を作成する | | | 未着手 |
-| T02-02 | ヘッダーコンポーネント（`src/components/Header.astro`）を作成し、サイトタイトルを表示する | | | 未着手 |
-| T02-03 | フッターコンポーネント（`src/components/Footer.astro`）を作成し、コピーライト表記を表示する | | | 未着手 |
-| T02-04 | サイトナビゲーションコンポーネント（`src/components/SiteNav.tsx`）を作成する | | | 未着手 |
-| T02-05 | `src/navigation.ts` から静的なナビゲーション項目を読み込み、表示する | | | 未着手 |
-| T02-06 | Tailwind CSSを使用して基本的なPC向けスタイリングを適用する | | | 未着手 |
-| **T03** | **レスポンシブ対応** | | | 未着手 |
-| T03-01 | スマートフォン表示向けのメディアクエリを設定する | | | 未着手 |
-| T03-02 | スマートフォン表示時にサイトナビゲーションをトグルで表示/非表示にする機能を実装する | | | 未着手 |
-| **T04** | **コンテンツ表示機能** | | | 未着手 |
-| T04-01 | AstroのContent Collectionsを設定し、`rulebook`コレクションを定義する | | | 未着手 |
-| T04-02 | 動的ルーティング `src/pages/rulebook/[...slug].astro` を作成する | | | 未着手 |
-| T04-03 | Markdown/MDXコンテンツを読み込み、ページに表示する | | | 未着手 |
-| T04-04 | ページ内目次コンポーネント（`src/components/TableOfContents.tsx`）を作成する | | | 未着手 |
-| T04-05 | フロントマターの `showToc` フラグに応じてページ内目次の表示/非表示を制御する | | | 未着手 |
-| **T05** | **Reactコンポーネント埋め込み** | | | 未着手 |
-| T05-01 | MDX内で使用するサンプルReactコンポーネント（例: `Callout.tsx`）を作成する | | | 未着手 |
-| T05-02 | MDXファイル内でサンプルコンポーネントをインポートして使用できることを確認する | | | 未着手 |
-| T05-03 | コンポーネントエラー発生時にビルドが失敗することを確認するテストを追加する | | | 未着手 |
-| **T06** | **デプロイ設定** | | | 未着手 |
-| T06-01 | `astro.config.mjs` で `site` と `base` をGitHub Pages用に設定する | | | 未着手 |
-| T06-02 | GitHub Actionsのワークフローファイルを作成し、ビルドとデプロイを自動化する | | | 未着手 |
+## フェーズ3.2: テストファースト (TDD)
+**重要**: これらのテストは、いかなる実装の前に書かれ、失敗しなければなりません。
+- [ ] T005 [P] `tests/e2e/navigation.spec.ts` を作成し、主要ページ（ホームページ、サンプルルールページ）間の基本的なナビゲーションをテストするE2Eテストを記述する。
+- [ ] T006 [P] `tests/e2e/responsive.spec.ts` を作成し、スマートフォン表示時にナビゲーションのトグルボタンが表示され、クリックでメニューが開閉することをテストするE2Eテストを記述する。
+- [ ] T007 [P] `tests/visual/layout.spec.ts` を作成し、ヘッダーとフッターの基本的な視覚的リグレッションテストを記述する。
+
+## フェーズ3.3: コア実装
+- [ ] T008 `src/site-config.ts` を作成し、サイトタイトルとコピーライト情報を定義する。
+- [ ] T009 `src/navigation.ts` を作成し、静的なサイトナビゲーションの構造を定義する。
+- [ ] T010 [P] `src/components/Header.astro` を作成し、サイトタイトルとナビゲーションコンポーネントを表示する。
+- [ ] T011 [P] `src/components/Footer.astro` を作成し、コピーライト情報を表示する。
+- [ ] T012 [P] `src/components/SiteNav.tsx` を作成し、ナビゲーション項目を動的に表示し、モバイル用のトグル機能を持つReactコンポーネントを実装する。
+- [ ] T013 `src/layouts/MainLayout.astro` を作成し、ヘッダー、フッター、メインコンテンツ領域を含む基本ページレイアウトを定義する。
+- [ ] T014 `src/pages/index.astro` を作成し、`MainLayout` を使用したホームページを実装する。
+
+## フェーズ3.4: コンテンツ統合
+- [ ] T015 `src/content/config.ts` を作成し、`rulebook` という名前のContent Collectionを定義する。スキーマには `title`, `description`, `pubDate`, `showToc` を含める。
+- [ ] T016 `src/pages/rulebook/[...slug].astro` を作成し、`rulebook`コレクションのコンテンツを動的にレンダリングするページを実装する。
+- [ ] T017 [P] `src/components/TableOfContents.tsx` を作成し、現在のページの見出しから目次を生成するReactコンポーネントを実装する。
+- [ ] T018 `[...slug].astro` ページに、フロントマターの `showToc` フラグに基づいて `TableOfContents` の表示を制御するロジックを追加する。
+- [ ] T019 [P] `src/components/Callout.tsx` のような、MDX内で使用するサンプルReactコンポーネントを作成する。
+- [ ] T020 `src/content/rulebook/sample.mdx` を作成し、`Callout`コンポーネントを埋め込んで表示できることを確認する。
+
+## フェーズ3.5: 仕上げ
+- [ ] T021 [P] `tests/unit/navigation.spec.ts` を作成し、ナビゲーションデータ構造に関する単体テストを記述する。
+- [ ] T022 `astro.config.mjs` を更新し、GitHub Pagesへのデプロイに必要な `site` と `base` の設定を追加する。
+- [ ] T023 `.github/workflows/deploy.yml` を作成し、`main`ブランチへのプッシュ時に自動でビルドとGitHub Pagesへのデプロイを行うGitHub Actionsワークフローを定義する。
+- [ ] T024 `README.md` を更新し、プロジェクトの概要とセットアップ手順を記述する。
+
+## 依存関係
+- 実装 (T008以降) の前にテスト (T005-T007) が存在すること。
+- `MainLayout` (T013) は `Header` (T010), `Footer` (T011) に依存する。
+- コンテンツ表示 (T016) は Content Collection の設定 (T015) に依存する。
+
+## 並列実行の例
+```
+# 以下のテスト作成タスクは並列で実行可能です:
+タスク: T005, T006, T007
+
+# 以下のコンポーネント作成タスクは並列で実行可能です:
+タスク: T010, T011, T012
+```
