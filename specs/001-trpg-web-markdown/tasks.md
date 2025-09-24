@@ -18,11 +18,11 @@
 ## フェーズ3.3: コア実装
 - [X] T008 `src/site-config.ts` を作成し、サイトタイトルとコピーライト情報を定義する。
 - [X] T009 `src/navigation.ts` を作成し、静的なサイトナビゲーションの構造を定義する。
-- [ ] T010 [P] `src/components/Header.astro` を作成し、サイトタイトルとナビゲーションコンポーネントを表示する。
-- [ ] T011 [P] `src/components/Footer.astro` を作成し、コピーライト情報を表示する。
-- [ ] T012 [P] `src/components/SiteNav.tsx` を作成し、ナビゲーション項目を動的に表示し、モバイル用のトグル機能を持つReactコンポーネントを実装する。
-- [ ] T013 `src/layouts/MainLayout.astro` を作成し、ヘッダー、フッター、メインコンテンツ領域を含む基本ページレイアウトを定義する。
-- [ ] T014 `src/pages/index.astro` を作成し、`MainLayout` を使用したホームページを実装する。
+- [X] T010 [P] `src/components/Header.astro` を作成し、サイトタイトルとナビゲーションコンポーネントを表示する。
+- [X] T011 [P] `src/components/Footer.astro` を作成し、コピーライト情報を表示する。
+- [X] T012 [P] `src/components/SiteNav.tsx` を作成し、ナビゲーション項目を動的に表示し、モバイル用のトグル機能を持つReactコンポーネントを実装する。
+- [X] T013 `src/layouts/MainLayout.astro` を作成し、ヘッダー、フッター、メインコンテンツ領域を含む基本ページレイアウトを定義する。
+- [X] T014 `src/pages/index.astro` を作成し、`MainLayout` を使用したホームページを実装する。
 
 ## フェーズ3.4: コンテンツ統合
 - [ ] T015 `src/content/config.ts` を作成し、`rulebook` という名前のContent Collectionを定義する。スキーマには `title`, `description`, `pubDate`, `showToc` を含める。
