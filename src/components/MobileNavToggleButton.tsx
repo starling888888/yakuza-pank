@@ -3,9 +3,10 @@ import SiteNav from './SiteNav.tsx';
 
 interface MobileNavToggleButtonProps {
   base: string;
+  currentPath: string;
 }
 
-export default function MobileNavToggleButton({ base }: MobileNavToggleButtonProps) {
+export default function MobileNavToggleButton({ base, currentPath }: MobileNavToggleButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -22,7 +23,7 @@ export default function MobileNavToggleButton({ base }: MobileNavToggleButtonPro
       {/* Conditionally render SiteNav as an overlay when open on mobile */}
       {isOpen && (
         <div data-testid="mobile-nav-overlay" className="fixed inset-0 bg-gray-900/95 z-10 flex flex-col justify-center items-center sm:hidden">
-          <SiteNav isMobileOverlay={true} base={base} />
+          <SiteNav isMobileOverlay={true} base={base} currentPath={currentPath}/>
         </div>
       )}
     </>

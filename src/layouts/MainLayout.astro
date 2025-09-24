@@ -14,6 +14,7 @@ const {
 	title = SITE_CONFIG.title,
 	description = 'Yakuza Pank TRPGのオンラインルールブック',
 } = Astro.props;
+const curruntPath = Astro.url.pathname;
 ---
 <!doctype html>
 <html lang="ja">
@@ -29,7 +30,7 @@ const {
 		<Header base={import.meta.env.BASE_URL} />
 		<div class="flex flex-1"> {/* Flex container for sidebar and main content */}
 			<aside class="w-64 bg-gray-100 p-4 hidden sm:block shadow-lg"> {/* Sidebar for larger screens */}
-				<SiteNav base={import.meta.env.BASE_URL} /> {/* SiteNav in sidebar */}
+				<SiteNav base={import.meta.env.BASE_URL} currentPath={curruntPath}/> {/* SiteNav in sidebar */}
 			</aside>
 			<main class="flex-grow p-4">
 				<slot />

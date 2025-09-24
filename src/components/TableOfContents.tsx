@@ -6,7 +6,7 @@ interface Heading {
   level: number;
 }
 
-const TableOfContents: React.FC = () => {
+export default function TableOfContents() {
   const [headings, setHeadings] = useState<Heading[]>([]);
 
   useEffect(() => {
@@ -46,5 +46,3 @@ const TableOfContents: React.FC = () => {
     </nav>
   );
 };
-
-export default TableOfContents;

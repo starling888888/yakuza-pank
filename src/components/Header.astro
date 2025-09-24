@@ -7,11 +7,12 @@ interface Props {
 }
 
 const { base } = Astro.props;
+const curruntPath = Astro.url.pathname;
 ---
 <header id="main-header" class="bg-gray-800 text-white p-4 flex justify-between items-center shadow-md">
   <a href={`${base}/`} class="text-2xl font-extrabold tracking-tight hover:text-gray-300 transition-colors duration-200 flex items-center">
     <img src={import.meta.env.BASE_URL + 'icon.svg'} alt="Site Icon" class="h-8 w-8 mr-2" />
     {SITE_CONFIG.title}
   </a>
-  <MobileNavToggleButton client:load base={base} />
+  <MobileNavToggleButton client:load base={base} currentPath={curruntPath}/>
 </header>
