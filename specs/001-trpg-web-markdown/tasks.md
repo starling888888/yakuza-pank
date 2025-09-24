@@ -34,7 +34,7 @@
 - [X] T020 `src/content/rulebook/sample.mdx` を作成し、`Callout`コンポーネントを埋め込んで表示できることを確認する。
 
 ## フェーズ3.5: 仕上げ
-- [ ] T021 [P] `tests/unit/navigation.spec.ts` を作成し、ナビゲーションデータ構造に関する単体テストを記述する。
+- [X] T021 [P] `tests/unit/navigation.spec.ts` を作成し、ナビゲーションデータ構造に関する単体テストを記述する。
 - [ ] T022 `astro.config.mjs` を更新し、GitHub Pagesへのデプロイに必要な `site` と `base` の設定を追加する。
 - [ ] T023 `.github/workflows/deploy.yml` を作成し、`main`ブランチへのプッシュ時に自動でビルドとGitHub Pagesへのデプロイを行うGitHub Actionsワークフローを定義する。
 - [ ] T024 `README.md` を更新し、プロジェクトの概要とセットアップ手順を記述する。
