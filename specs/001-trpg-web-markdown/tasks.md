@@ -27,7 +27,7 @@
 ## フェーズ3.4: コンテンツ統合
 - [X] T015 `src/content/config.ts` を作成し、`rulebook` という名前のContent Collectionを定義する。スキーマには `title`, `description`, `pubDate`, `showToc` を含める。
 - [X] T016 `src/pages/rulebook/[...slug].astro` を作成し、`rulebook`コレクションのコンテンツを動的にレンダリングするページを実装する。
-- [ ] T017 [P] `src/components/TableOfContents.tsx` を作成し、現在のページの見出しから目次を生成するReactコンポーネントを実装する。
+- [X] T017 [P] `src/components/TableOfContents.tsx` を作成し、現在のページの見出しから目次を生成するReactコンポーネントを実装する。
 - [ ] T018 `[...slug].astro` ページに、フロントマターの `showToc` フラグに基づいて `TableOfContents` の表示を制御するロジックを追加する。
 - [ ] T019 [P] `src/components/Callout.tsx` のような、MDX内で使用するサンプルReactコンポーネントを作成する。
 - [ ] T020 `src/content/rulebook/sample.mdx` を作成し、`Callout`コンポーネントを埋め込んで表示できることを確認する。
