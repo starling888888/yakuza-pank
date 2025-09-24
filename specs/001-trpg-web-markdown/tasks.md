@@ -30,8 +30,8 @@
 - [X] T017 [P] `src/components/TableOfContents.tsx` を作成し、現在のページの見出しから目次を生成するReactコンポーネントを実装する。
 - [X] T018 `[...slug].astro` ページに、フロントマターの `showToc` フラグに基づいて `TableOfContents` の表示を制御するロジックを追加する。
 - [X] T018.1 `src/content/rulebook/sample.md` を作成し、`TableOfContents` が正しく表示されることを確認する。
-- [ ] T019 [P] `src/components/Callout.tsx` のような、MDX内で使用するサンプルReactコンポーネントを作成する。
-- [ ] T020 `src/content/rulebook/sample.mdx` を作成し、`Callout`コンポーネントを埋め込んで表示できることを確認する。
+- [X] T019 [P] `src/components/Callout.tsx` のような、MDX内で使用するサンプルReactコンポーネントを作成する。
+- [X] T020 `src/content/rulebook/sample.mdx` を作成し、`Callout`コンポーネントを埋め込んで表示できることを確認する。
 
 ## フェーズ3.5: 仕上げ
 - [ ] T021 [P] `tests/unit/navigation.spec.ts` を作成し、ナビゲーションデータ構造に関する単体テストを記述する。
