@@ -9,16 +9,17 @@ interface NavItem {
 
 interface SiteNavProps {
   isMobileOverlay?: boolean; // New prop to indicate if it's used as mobile overlay
+  base: string; // Add base prop
 }
 
-export default function SiteNav({ isMobileOverlay }: SiteNavProps) {
+export default function SiteNav({ isMobileOverlay, base }: SiteNavProps) {
   const renderNavLinks = (items: NavItem[]) => {
     return (
       <ul className={`flex flex-col gap-6 sm:gap-4 text-xl ${isMobileOverlay ? 'sm:text-xl' : 'sm:text-base'}`}>
         {items.map((item) => (
           <li key={item.path || item.title}>
             {item.path ? (
-              <a href={item.path} className={`${isMobileOverlay ? 'text-white' : 'text-gray-800'} hover:text-gray-600 transition-colors duration-200`}>{item.title}</a>
+              <a href={`${base}${item.path.startsWith('/') ? item.path.substring(1) : item.path}`} className={`${isMobileOverlay ? 'text-white' : 'text-gray-800'} hover:text-gray-600 transition-colors duration-200`}>{item.title}</a>
             ) : (
               <span className={`${isMobileOverlay ? 'text-gray-400' : 'text-gray-600'} font-semibold`}>{item.title}</span>
             )}

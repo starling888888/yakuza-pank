@@ -1,8 +1,14 @@
 ---
 import { SITE_CONFIG } from '../site-config';
 import MobileNavToggleButton from './MobileNavToggleButton';
+
+interface Props {
+  base: string;
+}
+
+const { base } = Astro.props;
 ---
 <header id="main-header" class="bg-gray-800 text-white p-4 flex justify-between items-center shadow-md">
-  <a href="/" class="text-2xl font-extrabold tracking-tight hover:text-gray-300 transition-colors duration-200">{SITE_CONFIG.title}</a>
-  <MobileNavToggleButton client:load />
+  <a href={`${base}/`} class="text-2xl font-extrabold tracking-tight hover:text-gray-300 transition-colors duration-200">{SITE_CONFIG.title}</a>
+  <MobileNavToggleButton client:load base={base} />
 </header>

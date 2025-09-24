@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Content Page', () => {
   test('should display Callout components on sample rulebook page', async ({ page }) => {
-    await page.goto('/rulebook/sample');
+    await page.goto('./rulebook/sample');
 
     // Check if the info callout is visible
     const infoCallout = page.locator('div.bg-blue-100');

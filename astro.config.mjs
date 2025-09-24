@@ -9,6 +9,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://starling888888.github.io',
+  base: '/yakuza-pank/',
   integrations: [
     react(),
     mdx({

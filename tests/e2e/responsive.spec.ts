@@ -6,7 +6,7 @@ test.describe('レスポンシブデザインのテスト', () => {
     await page.setViewportSize(devices['iPhone 13 Pro'].viewport);
 
     // 1. ルートページにアクセス
-    await page.goto('/');
+    await page.goto('./');
 
     // 2. ナビゲーションのトグルボタンが表示されていることを確認
     const toggleButton = page.getByRole('button', { name: 'メニューを開閉' });

@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import SiteNav from './SiteNav.tsx';
 
-export default function MobileNavToggleButton() {
+interface MobileNavToggleButtonProps {
+  base: string;
+}
+
+export default function MobileNavToggleButton({ base }: MobileNavToggleButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -18,7 +22,7 @@ export default function MobileNavToggleButton() {
       {/* Conditionally render SiteNav as an overlay when open on mobile */}
       {isOpen && (
         <div data-testid="mobile-nav-overlay" className="fixed inset-0 bg-gray-900/95 z-10 flex flex-col justify-center items-center sm:hidden">
-          <SiteNav isMobileOverlay={true} />
+          <SiteNav isMobileOverlay={true} base={base} />
         </div>
       )}
     </>

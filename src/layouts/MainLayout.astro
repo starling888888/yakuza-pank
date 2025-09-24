@@ -26,10 +26,10 @@ const {
 		<title>{title}</title>
 	</head>
 	<body class="bg-white text-black flex flex-col min-h-screen">
-		<Header />
+		<Header base={import.meta.env.BASE_URL} />
 		<div class="flex flex-1"> {/* Flex container for sidebar and main content */}
 			<aside class="w-64 bg-gray-100 p-4 hidden sm:block shadow-lg"> {/* Sidebar for larger screens */}
-				<SiteNav /> {/* SiteNav in sidebar */}
+				<SiteNav base={import.meta.env.BASE_URL} /> {/* SiteNav in sidebar */}
 			</aside>
 			<main class="flex-grow p-4">
 				<slot />
