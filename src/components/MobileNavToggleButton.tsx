@@ -17,7 +17,7 @@ export default function MobileNavToggleButton() {
       </button>
       {/* Conditionally render SiteNav as an overlay when open on mobile */}
       {isOpen && (
-        <div className="fixed inset-0 bg-gray-900/95 z-10 flex flex-col justify-center items-center sm:hidden">
+        <div data-testid="mobile-nav-overlay" className="fixed inset-0 bg-gray-900/95 z-10 flex flex-col justify-center items-center sm:hidden">
           <SiteNav isMobileOverlay={true} />
         </div>
       )}

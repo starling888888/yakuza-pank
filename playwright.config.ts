@@ -11,4 +11,5 @@ export default defineConfig({
     baseURL: 'http://localhost:4321',
   },
   testDir: 'tests/',
+  testMatch: ['**/e2e/**/*.spec.ts', '**/visual/**/*.spec.ts'],
 });

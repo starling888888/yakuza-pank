@@ -13,11 +13,12 @@ test.describe('レスポンシブデザインのテスト', () => {
     await expect(toggleButton).toBeVisible();
 
     // 3. サイトナビゲーションが最初は表示されていないことを確認
-    const siteNav = page.getByRole('navigation', { name: 'サイトナビゲーション' });
+    const siteNav = page.getByTestId('mobile-nav-overlay');
     await expect(siteNav).not.toBeVisible();
 
     // 4. トグルボタンをクリック
     await toggleButton.click();
+    await page.waitForSelector('[data-testid="mobile-nav-overlay"]');
 
     // 5. サイトナビゲーションが表示されることを確認
     await expect(siteNav).toBeVisible();

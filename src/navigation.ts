@@ -8,8 +8,8 @@ export const NAVIGATION = [
     title: "ルールブック",
     children: [
       {
-        title: "キャラクター作成",
-        path: "/rulebook/character-creation",
+        title: "サンプルページ",
+        path: "/rulebook/sample",
       },
       {
         title: "ゲームルール",
