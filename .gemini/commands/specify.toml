@@ -1,17 +1,26 @@
-description = "Start a new feature by creating a specification and feature branch. This is the first step in the Spec-Driven Development lifecycle."
+description = "自然言語の機能説明から機能仕様を作成または更新します。"
 
 prompt = """
+---
+description: 自然言語の機能説明から機能仕様を作成または更新します。
+---
 
-Start a new feature by creating a specification and feature branch.
+日本語で出力すること。
+ユーザー入力は、エージェントから直接提供されるか、コマンド引数として提供されます - プロンプトを進める前に（空でない場合）それを**必ず**考慮に入れる必要があります。
 
-This is the first step in the Spec-Driven Development lifecycle.
+ユーザー入力:
 
-Given the feature description provided as an argument, do this:
+$ARGUMENTS
 
-1. Run the script `.specify/scripts/create-new-feature.sh --json "{{args}}"` from repo root and parse its JSON output for BRANCH_NAME and SPEC_FILE. All file paths must be absolute.
-2. Load `.specify/templates/spec-template.md` to understand required sections.
-3. Write the specification to SPEC_FILE using the template structure, replacing placeholders with concrete details derived from the feature description (arguments) while preserving section order and headings.
-4. Report completion with branch name, spec file path, and readiness for the next phase.
+トリガーメッセージでユーザーが `/specify` の後に入力したテキストが機能説明です。 `{{args}}` が以下に文字通り表示されていても、この会話で常に利用可能であると想定してください。ユーザーが空のコマンドを提供しない限り、それを繰り返すようにユーザーに依頼しないでください。
 
-Note: The script creates and checks out the new branch and initializes the spec file before writing.
+その機能説明を前提として、これを実行してください：
+
+1. リポジトリのルートからスクリプト `.specify/scripts/bash/create-new-feature.sh --json "{{args}}"` を実行し、そのJSON出力を解析してBRANCH_NAMEとSPEC_FILEを取得します。すべてのファイルパスは絶対パスである必要があります。
+  **重要** このスクリプトは一度だけ実行する必要があります。JSONはターミナルに出力として提供されます - 探している実際のコンテンツを取得するには、常にそれを参照してください。
+2. 必要なセクションを理解するために `.specify/templates/spec-template.md` を読み込みます。
+3. テンプレート構造を使用して仕様をSPEC_FILEに書き込み、セクションの順序と見出しを維持しながら、プレースホルダーを機能説明（引数）から派生した具体的な詳細に置き換えます。
+4. ブランチ名、仕様ファイルパス、および次のフェーズの準備ができたことを報告します。
+
+注：スクリプトは、書き込む前に新しいブランチを作成してチェックアウトし、仕様ファイルを初期化します。
 """

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32">
+  <!-- 背景透過 -->
+  <rect width="64" height="64" fill="none"></rect>
+  
+  <!-- サイコロ -->
+  <rect x="14" y="14" width="36" height="36" rx="4" ry="4" fill="black"></rect>
+  
+  <!-- サイコロの目 -->
+  <circle cx="22" cy="22" r="3" fill="white"></circle>
+  <circle cx="32" cy="32" r="3" fill="white"></circle>
+  <circle cx="42" cy="42" r="3" fill="white"></circle>
+  
+  <!-- サイバーパンクのライン -->
+  <line x1="14" y1="32" x2="50" y2="32" stroke="white" stroke-width="2"></line>
+  <line x1="32" y1="14" x2="32" y2="50" stroke="white" stroke-width="2"></line>
+  
+  <!-- ヤクザの象徴（抽象的な襟/刀） -->
+  <polygon points="32,6 28,14 36,14" fill="white"></polygon>
+</svg>

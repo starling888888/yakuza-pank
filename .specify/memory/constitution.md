@@ -1,50 +1,42 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+SYNC IMPACT REPORT
+- Version: [NONE] -> v0.1.0
+- Changed Principles: All placeholders replaced with initial principles.
+- Added Sections: Governance rules defined.
+- Deleted Sections: None.
+- Templates Requiring Update:
+  - ⚠ Pending: .specify/templates/plan-template.md (to align with new principles)
+  - ⚠ Pending: .specify/templates/spec-template.md (to reflect static-site constraints)
+  - ⚠ Pending: .specify/templates/tasks-template.md (to include tasks like visual regression testing)
+- Follow-up TODOs:
+  - TODO(RATIFICATION_DATE): Determine the original project ratification date.
+-->
+# yakuza-pank Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. 必要最小限の製品 (MVP)
+すべての機能は、ユーザーに価値を提供する最小限の形で実装されなければならない。静的サイトとして、これはコアコンテンツとナビゲーションを意味する。
+**Rationale**: 過剰なエンジニアリングを避け、迅速なデプロイとフィードバックループを確保する。
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. 静的サイト優先アーキテクチャ
+動的なサーバーサイド処理を避け、可能な限り静的アセット（HTML, CSS, JS, 画像）としてビルドされなければならない。APIとの通信はクライアントサイドで行う。
+**Rationale**: パフォーマンス、セキュリティ、スケーラビリティ、およびデプロイの単純さを最大化する。
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. 包括的なテスト
+単体テスト、およびPlaywrightやCypressを用いたE2Eテストによって、すべてのユーザーフローがテストされなければならない。重要なUIコンポーネントには視覚的リグレッションテストを導入する。
+**Rationale**: 品質の維持と、リファクタリングや機能追加に対する信頼性を確保する。
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. コンポーネントベース設計
+UIは再利用可能で独立したコンポーネントとして構築されなければならない。各コンポーネントは独自のスタイルとロジックを持つべきである。
+**Rationale**: 開発効率、一貫性、保守性を向上させる。
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### V. 自動化されたデプロイメント
+`main`ブランチへのすべてのマージは、自動化されたビルド、テスト、および静的ホスティング環境へのデプロイをトリガーしなければならない。
+**Rationale**: ヒューマンエラーを削減し、継続的なデリバリーを実現する。
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+この憲法は、プロジェクトにおける他のすべての開発プラクティスやガイドラインに優先します。憲法の修正には、影響分析、チームの合意、および関連ドキュメント（テンプレートファイルなど）の更新計画が必要です。すべてのプルリクエストとレビューは、この憲法の原則への準拠を検証しなければなりません。
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: v0.1.0 | **Ratified**: TODO(RATIFICATION_DATE): プロジェクト開始日を特定できませんでした。 | **Last Amended**: 2025-09-22

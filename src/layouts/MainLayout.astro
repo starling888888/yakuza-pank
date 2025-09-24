@@ -1,0 +1,41 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_CONFIG } from '../site-config';
+import '../styles/global.css'; // Import global styles
+import SiteNav from '../components/SiteNav.tsx'; // Import SiteNav for sidebar
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = SITE_CONFIG.title,
+	description = 'Yakuza Pank TRPGのオンラインルールブック',
+} = Astro.props;
+const curruntPath = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href={import.meta.env.BASE_URL + 'favicon.svg'} />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-white text-black flex flex-col min-h-screen">
+		<Header base={import.meta.env.BASE_URL} />
+		<div class="flex flex-1"> {/* Flex container for sidebar and main content */}
+			<aside class="w-64 bg-gray-100 p-4 hidden sm:block shadow-lg"> {/* Sidebar for larger screens */}
+				<SiteNav base={import.meta.env.BASE_URL} currentPath={curruntPath}/> {/* SiteNav in sidebar */}
+			</aside>
+			<main class="flex-grow p-4">
+				<slot />
+			</main>
+		</div>
+		<Footer />
+	</body>
+</html>
