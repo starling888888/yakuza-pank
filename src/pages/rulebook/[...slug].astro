@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import MainLayout from '../../layouts/MainLayout.astro';
-import TableOfContents from '../../components/TableOfContents.tsx'; // Import TableOfContents
+import TableOfContents from '../../components/TableOfContents.tsx';
 
 export async function getStaticPaths() {
   const rulebookEntries = await getCollection('rulebook');
@@ -17,10 +17,10 @@ const { Content } = await entry.render();
 
 <MainLayout title={entry.data.title} description={entry.data.description}>
   <article class="flex">
-    <div class="flex-grow">
+    <div class="flex-grow prose">
       <Content />
     </div>
-    {entry.data.showToc && ( // Conditionally render TableOfContents
+    {entry.data.showToc && (
       <aside class="hidden lg:block w-64 ml-8 flex-shrink-0">
         <TableOfContents client:load />
       </aside>
