@@ -36,8 +36,8 @@
 ## フェーズ3.5: 仕上げ
 - [X] T021 [P] `tests/unit/navigation.spec.ts` を作成し、ナビゲーションデータ構造に関する単体テストを記述する。
 - [X] T022 `astro.config.mjs` を更新し、GitHub Pagesへのデプロイに必要な `site` と `base` の設定を追加する。
-- [ ] T023 `.github/workflows/deploy.yml` を作成し、`main`ブランチへのプッシュ時に自動でビルドとGitHub Pagesへのデプロイを行うGitHub Actionsワークフローを定義する。
-- [ ] T024 `README.md` を更新し、プロジェクトの概要とセットアップ手順を記述する。
+- [X] T023 `.github/workflows/deploy.yml` を作成し、`main`ブランチへのプッシュ時に自動でビルドとGitHub Pagesへのデプロイを行うGitHub Actionsワークフローを定義する。
+- [X] T024 `README.md` を更新し、プロジェクトの概要とセットアップ手順を記述する。
 
 ## 依存関係
 - 実装 (T008以降) の前にテスト (T005-T007) が存在すること。
