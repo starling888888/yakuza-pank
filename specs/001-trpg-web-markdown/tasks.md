@@ -16,7 +16,7 @@
 - [X] T007 [P] `tests/visual/layout.spec.ts` を作成し、ヘッダーとフッターの基本的な視覚的リグレッションテストを記述する。
 
 ## フェーズ3.3: コア実装
-- [ ] T008 `src/site-config.ts` を作成し、サイトタイトルとコピーライト情報を定義する。
+- [X] T008 `src/site-config.ts` を作成し、サイトタイトルとコピーライト情報を定義する。
 - [ ] T009 `src/navigation.ts` を作成し、静的なサイトナビゲーションの構造を定義する。
 - [ ] T010 [P] `src/components/Header.astro` を作成し、サイトタイトルとナビゲーションコンポーネントを表示する。
 - [ ] T011 [P] `src/components/Footer.astro` を作成し、コピーライト情報を表示する。
