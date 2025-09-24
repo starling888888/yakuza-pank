@@ -9,8 +9,6 @@ export default defineConfig({
   },
   use: {
     baseURL: 'http://localhost:4321/yakuza-pank/',
-    headless: false
-    
   },
   testDir: 'tests/',
   testMatch: ['**/e2e/**/*.spec.ts', '**/visual/**/*.spec.ts'],
